@@ -1,0 +1,21 @@
+server:
+  port: 18099
+
+spring:
+  profiles:
+    active: mq
+
+  rabbitmq:
+    host: server_service
+    port: 5672
+    username: admin
+    password: whoareyou
+
+  redis:
+    host: server_service
+    port: 6379
+    password:
+
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/test

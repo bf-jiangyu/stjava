@@ -1,0 +1,4 @@
+rootProject.name = 'stjava'
+include 'stjava-base'
+include 'stjava-springboot'
+
