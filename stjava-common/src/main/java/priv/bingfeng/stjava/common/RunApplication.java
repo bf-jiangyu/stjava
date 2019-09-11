@@ -1,4 +1,4 @@
-package priv.bingfeng.stjava.sharding;
+package priv.bingfeng.stjava.common;
 
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.builder.SpringApplicationBuilder;

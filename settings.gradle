@@ -3,4 +3,5 @@ include 'stjava-base'
 include 'stjava-springboot'
 include 'stjava-sharding'
 include 'stjava-common'
+include 'stjava-h2'
 

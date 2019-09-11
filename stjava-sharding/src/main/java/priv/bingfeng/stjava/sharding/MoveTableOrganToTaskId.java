@@ -3,6 +3,7 @@ package priv.bingfeng.stjava.sharding;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import priv.bingfeng.stjava.common.RunApplication;
 import priv.bingfeng.stjava.common.support.DaoQueryCriterion;
 import priv.bingfeng.stjava.sharding.mapper.UserMapper;
 import priv.bingfeng.stjava.sharding.mapper.entity.User;
