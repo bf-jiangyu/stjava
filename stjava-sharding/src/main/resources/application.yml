@@ -1,0 +1,10 @@
+
+spring:
+  profiles:
+    active: sharding
+
+mybatis-plus:
+  config-location: classpath:mybatis/mybatis-config.xml
+
+server:
+  port: 18081

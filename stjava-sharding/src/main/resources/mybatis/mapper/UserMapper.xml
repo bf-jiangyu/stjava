@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="priv.bingfeng.stjava.sharding.mapper.UserMapper">
+
+    <update id="createTableIfNotExists" parameterType="int">
+        CREATE TABLE IF NOT EXISTS test_user_#{userId} LIKE test_user;
+    </update>
+
+    <select id="listBySuffix" parameterType="DaoQueryCriterion" resultType="priv.bingfeng.stjava.sharding.mapper.entity.User">
+        SELECT * FROM test_user_${tableSuffix}
+        <if test="filterMap.filter != null">
+            <where>
+                ${filterMap.filter}
+            </where>
+        </if>
+        <if test="isSort"> ORDER BY ${sortSql} </if>
+        <if test="isLimit"> LIMIT ${limitSql} </if>
+    </select>
+
+</mapper>
