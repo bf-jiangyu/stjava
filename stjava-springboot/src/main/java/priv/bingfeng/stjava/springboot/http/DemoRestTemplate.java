@@ -7,12 +7,15 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.http.converter.ByteArrayHttpMessageConverter;
+import org.springframework.util.StreamUtils;
 import org.springframework.web.client.RestTemplate;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.net.InetSocketAddress;
 import java.net.Proxy;
 
-public class DemoRestTemplate {
+public class DemoRestTemplate<main> {
 
     public static SimpleClientHttpRequestFactory HTTP_CLIENT = new SimpleClientHttpRequestFactory();
 
@@ -34,12 +37,28 @@ public class DemoRestTemplate {
         }
     }
 
-    public static void main(String[] args) {
+    public static void downFile() {
+        File file = new RestTemplate().execute("", HttpMethod.GET, null, clientHttpResponse -> {
+            File ret = new File("");
+            StreamUtils.copy(clientHttpResponse.getBody(), new FileOutputStream(ret));
+            return ret;
+        });
+    }
+
+    public static void downByte() {
         RestTemplate restTemplate = new RestTemplate(HTTP_CLIENT);
         restTemplate.getMessageConverters().add(new ByteArrayHttpMessageConverter());
         ResponseEntity<byte[]> response = restTemplate.exchange("", HttpMethod.GET, HTTP_BASE_ENTITY, byte[].class);
         response.getStatusCode();
         response.getBody();
+    }
+
+    public static void downString() {
+        String content = new RestTemplate().exchange("http://localhost:21234/get_user", HttpMethod.GET, HttpEntity.EMPTY, String.class).getBody();
+        System.out.println(content);
+    }
+
+    public static void main(String[] args) {
     }
 
 }

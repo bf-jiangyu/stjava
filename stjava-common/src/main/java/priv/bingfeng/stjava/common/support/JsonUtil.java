@@ -4,16 +4,26 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
+import com.alibaba.fastjson.serializer.SerializerFeature;
 
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author 姜宇 jiangyu@blwit.com
+ * @company Bluewit
+ * @createDate 2018年3月23日 下午3:21:50
+ */
 public class JsonUtil {
 	
 	public static String toString(Object obj) {
 		return JSON.toJSONString(obj);
 	}
-	
+
+	public static String toStringAll(Object obj) {
+		return JSON.toJSONString(obj, SerializerFeature.WriteMapNullValue);
+	}
+
 	public static <T> T parseToObject(String content, Class<T> t) {
 		return JSON.parseObject(content, t);
 	}

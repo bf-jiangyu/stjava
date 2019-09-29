@@ -7,4 +7,5 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-amqp')
     compile('org.springframework.boot:spring-boot-starter-data-redis')
     compile('org.springframework.boot:spring-boot-starter-activemq')
+    compile('org.springframework.boot:spring-boot-starter-data-solr')
 }
