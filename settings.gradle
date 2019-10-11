@@ -4,4 +4,7 @@ include 'stjava-springboot'
 include 'stjava-sharding'
 include 'stjava-common'
 include 'stjava-h2'
+include 'stjava-mongo'
+include 'stjava-solr'
+include 'stjava-redis'
 

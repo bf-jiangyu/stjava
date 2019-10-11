@@ -1,0 +1,14 @@
+const:
+  solr:
+    username:
+    password:
+    core: xhs
+
+spring:
+  data:
+    solr:
+      host: http://server-solr:8983/solr
+
+#      repositories:
+#        enabled: true
+#      zk-host: 10.29.85.168:2181,10.66.156.228:2181,10.30.111.208:2181
