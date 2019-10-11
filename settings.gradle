@@ -7,4 +7,5 @@ include 'stjava-h2'
 include 'stjava-mongo'
 include 'stjava-solr'
 include 'stjava-redis'
+include 'stjava-mq'
 
