@@ -1,4 +1,4 @@
-package priv.bingfeng.stjava.common;
+package priv.bingfeng.stjava.common.demo;
 
 import com.alibaba.fastjson.JSONArray;
 import org.springframework.util.ResourceUtils;

@@ -5,6 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.redis.core.RedisTemplate;
 import priv.bingfeng.stjava.springboot.RunApplication;
 
+import javax.annotation.Resource;
+
 @SpringBootApplication
 public class RedisDemo implements RunApplication {
 
@@ -13,6 +15,9 @@ public class RedisDemo implements RunApplication {
     public RedisDemo(RedisTemplate<String, String> redisTemplate) {
         this.redisTemplate = redisTemplate;
     }
+
+    @Resource(name="stringRedisTemplate")
+    private RedisTemplate<String, String> redisTemplate2;
 
     @Override
     public void execute() {
