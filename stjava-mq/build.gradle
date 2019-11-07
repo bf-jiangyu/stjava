@@ -7,8 +7,7 @@ dependencies {
     testCompile('org.springframework.boot:spring-boot-starter-test')
 
     compile('org.springframework.boot:spring-boot-starter-activemq')
-
-    compile('org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.0')
+    compile('org.springframework.boot:spring-boot-starter-amqp')
 }
 
 sourceSets {

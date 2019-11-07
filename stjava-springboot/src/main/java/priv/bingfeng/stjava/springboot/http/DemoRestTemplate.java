@@ -7,6 +7,8 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.http.converter.ByteArrayHttpMessageConverter;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 import org.springframework.util.StreamUtils;
 import org.springframework.web.client.RestTemplate;
 
@@ -14,6 +16,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.net.InetSocketAddress;
 import java.net.Proxy;
+import java.util.HashMap;
+import java.util.Map;
 
 public class DemoRestTemplate<main> {
 
@@ -58,7 +62,16 @@ public class DemoRestTemplate<main> {
         System.out.println(content);
     }
 
+    public static void post() {
+        MultiValueMap<String, String> postData = new LinkedMultiValueMap<>();
+        postData.add("accountJson", "hello world");
+
+        String content = new RestTemplate().exchange("http://localhost:21234/lbs_back/WeixinOpen!pushLbsData.action", HttpMethod.POST, new HttpEntity<>(postData, null), String.class).getBody();
+        System.out.println(content);
+    }
+
     public static void main(String[] args) {
+        post();
     }
 
 }
