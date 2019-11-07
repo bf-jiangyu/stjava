@@ -16,7 +16,6 @@ public class MqProducer {
             Destination destination = session.createQueue("queue1");
 
             MessageProducer producer = session.createProducer(destination);
-
             producer.setDeliveryMode(DeliveryMode.NON_PERSISTENT);
 
             String text = "Hello world!";
