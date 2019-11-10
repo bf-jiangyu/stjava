@@ -1,0 +1,27 @@
+apply from: "${rootProject.projectDir}/common.gradle"
+
+dependencies {
+    compile project(':stjava-common')
+
+    compile('org.springframework.boot:spring-boot-starter')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+
+//    compile group: 'org.springframework', name: 'spring-context', version: '4.3.10.RELEASE'
+//    compile group: 'com.alibaba', name: 'dubbo', version: '2.5.9'
+
+    compile group: 'com.alibaba', name: 'dubbo', version: '2.6.5'
+    compile group: 'io.netty', name: 'netty', version: '3.10.6.Final'
+    compile group: 'org.apache.curator', name: 'curator-framework', version: '4.1.0'
+
+//    compile group: 'io.netty', name: 'netty-all', version: '4.1.32.Final'
+//    compile group: 'org.javassist', name: 'javassist', version: '3.21.0-GA'
+//    compile group: 'com.github.sgroschupf', name: 'zkclient', version: '0.1'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java', '../stjava-common/src/main/java']
+        }
+    }
+}

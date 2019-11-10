@@ -8,4 +8,5 @@ include 'stjava-mongo'
 include 'stjava-solr'
 include 'stjava-redis'
 include 'stjava-mq'
+include 'st-dubbo'
 
